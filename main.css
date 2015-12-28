@@ -1,0 +1,55 @@
+/*
+if u want to change the height of the button, 
+make sure to ajust transform-origin & line-height.
+*/
+.btn_st {
+  perspective: 600px;
+  width: 200px;
+  height: 100px;
+}
+.btn_st div {
+  font: bold 40px arial, Meiryo;
+  color: #FFF;
+  border: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.7), inset 0 0 15px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 100px;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  -webkit-user-select: none;
+}
+.btn_st:focus {
+  outline:0;
+}
+.btn_st div:nth-child(1) {
+  background: #3B8;
+  transform: rotateX(0deg);
+  transition: all 0.2s ease;
+  transform-origin: 50% 50% -50px;
+  z-index: 1;
+}
+.btn_st div:nth-child(2) {
+  background: #d24147;
+  transform: rotateX(-90deg);
+  transition: all 0.2s ease;
+  transform-origin: 50% 50% -50px;
+  z-index: 0;
+}
+.btn_st_clicked div:nth-child(1) {
+  z-index: 0;
+  transform: rotateX(90deg);
+}
+.btn_st_clicked div:nth-child(2) {
+  z-index: 1;
+  transform: rotateX(0deg);
+}
+.btn_st:hover div:nth-child(1) {
+  background: #52f4b7;
+}
+.btn_st:hover div:nth-child(2) {
+  background: #f9535a;
+}
